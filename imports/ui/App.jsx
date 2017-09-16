@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {FormattedMessage} from 'react-intl';
 
 import Task from './Task.jsx';
 
@@ -22,6 +23,14 @@ export default class App extends Component {
         return (
             <div className="container">
                 <header>
+                    <FormattedMessage
+                        id="header"
+                        defaultMessage={`Hello you have {unreadCount, number} {unreadCount, plural,
+                      one {message}
+                      other {messages}
+                    }`}
+                        values={{name: <b>{name}</b>, unreadCount: 1}}
+                    />
                     <h1>Todo List</h1>
                 </header>
 
